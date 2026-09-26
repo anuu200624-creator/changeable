@@ -490,8 +490,8 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 
 /* SERVICES */
 #services { background: var(--surface); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
-.service-card { background: var(--surface); padding: 2.5rem 2rem; transition: background 0.3s; cursor: default; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+  .service-card { display: block; background: var(--surface); padding: 2.5rem 2rem; color: inherit; text-decoration: none; transition: background 0.3s; cursor: pointer; }
 .service-card:hover { background: var(--surface2); }
 .service-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
 .si-purple { background: rgba(124,58,237,0.18); } .si-teal { background: rgba(168,85,247,0.14); } .si-pink { background: rgba(192,132,252,0.14); } .si-amber { background: rgba(124,58,237,0.10); } .si-blue { background: rgba(168,85,247,0.10); } .si-green { background: rgba(16,185,129,0.12); }
