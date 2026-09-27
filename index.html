@@ -301,9 +301,12 @@ body.loaded { opacity: 1; }
 ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #7c3aed, #e879f9); border-radius: 10px; }
 
 /* Cursor glow follower */
-#cursor-glow {
+  #cursor-glow {
   position: fixed;
   width: 340px; height: 340px;
+  pointer-events: none;
+  contain: strict;
+  will-change: left, top;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(124,58,237,0.09) 0%, transparent 70%);
   pointer-events: none;
@@ -1711,8 +1714,9 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   const PURPLE_DARK = 0x7c3aed, PURPLE_MID = 0xa855f7, PURPLE_LIGHT = 0xc084fc;
   const canvas = document.getElementById('globe-canvas');
   const heroEl = document.getElementById('hero');
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isTouchDevice ? 1 : 1.5));
   renderer.setClearColor(0x000000, 0);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
@@ -1761,11 +1765,17 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   // Mouse-driven rotation
   let mouseX=0,mouseY=0,targetRotX=0,targetRotY=0,currentRotX=0,currentRotY=0;
   const heroRect = {left:0,top:0,width:window.innerWidth,height:window.innerHeight};
-  window.addEventListener('mousemove',e=>{
-    const nx=(e.clientX/window.innerWidth-0.5)*2;
-    const ny=(e.clientY/window.innerHeight-0.5)*2;
-    targetRotY+=nx*0.04; targetRotX+=ny*0.04;
-  });
+  let pointerFrame = 0;
+  window.addEventListener('pointermove', e => {
+    if (isTouchDevice || pointerFrame) return;
+    pointerFrame = requestAnimationFrame(() => {
+      const nx = (e.clientX / window.innerWidth - 0.5) * 2;
+      const ny = (e.clientY / window.innerHeight - 0.5) * 2;
+      targetRotY = nx * 0.04;
+      targetRotX = ny * 0.04;
+      pointerFrame = 0;
+    });
+  }, { passive: true });
 
   const clock=new THREE.Clock();
   function animate(){
@@ -1808,6 +1818,8 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   ];
 
   const cards = document.querySelectorAll(CARD_SELECTORS.join(','));
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!supportsHover) return;
 
   cards.forEach(card => {
     card.classList.add('tilt-card');
