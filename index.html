@@ -59,8 +59,11 @@ nav {
 }
 .logo { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 1.65rem; color: var(--text); text-decoration: none; }
 .logo span { color: var(--accent); }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+  .mobile-menu-toggle { display: none; border: 0; background: transparent; padding: 0.5rem; cursor: pointer; }
+  .mobile-menu-toggle span { display: block; width: 1.35rem; height: 2px; margin: 4px 0; border-radius: 999px; background: var(--text); transition: transform 0.2s, opacity 0.2s; }
+
 
 /* Animated pill nav */
 .nav-pill-list {
@@ -717,15 +720,23 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   footer { flex-direction: column; text-align: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .social-links { justify-content: center; }
-  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  html, body { width: 100vw; max-width: 100vw; overflow-x: hidden; }
+  #hero, .hero-inner, .hero-left { width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: hidden; }
   nav { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 0.65rem; padding: 0.7rem 0.65rem; }
   .logo { align-self: center; font-size: 1.25rem; }
-  .nav-pill-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; max-width: none; gap: 0.2rem; padding: 0.25rem; overflow: visible; }
+  .mobile-menu-toggle { display: block; position: absolute; top: 0.75rem; right: 0.75rem; z-index: 12; }
+  .nav-pill-list { display: none; grid-template-columns: 1fr; width: 100%; max-width: none; gap: 0.15rem; padding: 0.35rem; overflow: visible; border-radius: 1rem; }
+  .nav-pill-list.is-open { display: grid; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   .nav-cursor { display: none; }
   .nav-pill-item { min-width: 0; }
-  .nav-pill-item a, .nav-pill-item.cta-item a { display: block; padding: 0.5rem 0.15rem; font-size: 0.62rem; line-height: 1.1; letter-spacing: 0; text-align: center; white-space: normal; }
-  .nav-pill-item.cta-item { grid-column: span 2; }
-  .hero-left { padding-top: 2.75rem; }
+  .nav-pill-item a, .nav-pill-item.cta-item a { display: block; padding: 0.72rem 0.65rem; font-size: 0.86rem; line-height: 1.1; letter-spacing: 0; text-align: left; white-space: normal; }
+  .nav-pill-item.cta-item { grid-column: auto; }
+  .hero-left { padding-top: 1.35rem; }
+  .badge { align-self: flex-start; margin-bottom: 1.25rem; max-width: 100%; font-size: 0.72rem; }
+  .hero-left h1 { max-width: 100%; font-size: clamp(2.1rem, 11.5vw, 3.5rem); line-height: 1.02; overflow-wrap: anywhere; word-break: normal; }
   .hero-ctas { width: 100%; flex-direction: column; align-items: stretch; }
   .hero-ctas a { text-align: center; }
   .demo-card, .chatbot-window, .workflow-visual { min-width: 0; max-width: 100%; overflow: hidden; }
@@ -756,6 +767,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
       <div class="mt-inner" id="mt-logo-inner"><span class="mt-hover-text">Home ✦</span></div>
     </div>
   </a>
+  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="navPillList" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
   <ul class="nav-pill-list" id="navPillList">
     <div class="nav-cursor" id="navCursor"></div>
     <li class="nav-pill-item"><a href="#services">Services</a></li>
@@ -2208,6 +2220,22 @@ document.querySelectorAll('img').forEach(img => {
       if (link) prefetch(link.getAttribute('href'));
     }, { passive: true });
   })();
-</script>
-</body>
-</html>
+  </script>
+  <script>
+  (() => {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('#navPillList');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('is-open', !isOpen);
+    });
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+    }));
+  })();
+  </script>
+  </body>
+  </html>
