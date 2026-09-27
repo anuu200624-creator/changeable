@@ -4,7 +4,9 @@ export default function Page() {
       <iframe
         title="CreationsXAI website"
         src="/creationsxai.html"
-        className="h-full w-full border-0"
+        loading="eager"
+        fetchPriority="high"
+        className="h-full min-h-dvh w-full border-0"
       />
     </main>
   )
