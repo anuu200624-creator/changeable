@@ -710,13 +710,28 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   .nav-pill-item a { padding: 0.55rem 0.7rem; font-size: 0.72rem; }
   .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .hero-stats strong { font-size: 1.15rem; }
-  .results-grid, .industries-grid { grid-template-columns: 1fr; }
+  .results-grid, .industries-grid, .services-grid { grid-template-columns: 1fr; }
   .industry-card, .service-card { padding: 1.5rem 1.25rem; }
   .cta-box { padding: 2.25rem 1.25rem; }
   .footer-top, .footer-find-us { grid-template-columns: 1fr; }
   footer { flex-direction: column; text-align: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .social-links { justify-content: center; }
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  nav { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 0.65rem; padding: 0.7rem 0.65rem; }
+  .logo { align-self: center; font-size: 1.25rem; }
+  .nav-pill-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; max-width: none; gap: 0.2rem; padding: 0.25rem; overflow: visible; }
+  .nav-cursor { display: none; }
+  .nav-pill-item { min-width: 0; }
+  .nav-pill-item a, .nav-pill-item.cta-item a { display: block; padding: 0.5rem 0.15rem; font-size: 0.62rem; line-height: 1.1; letter-spacing: 0; text-align: center; white-space: normal; }
+  .nav-pill-item.cta-item { grid-column: span 2; }
+  .hero-left { padding-top: 2.75rem; }
+  .hero-ctas { width: 100%; flex-direction: column; align-items: stretch; }
+  .hero-ctas a { text-align: center; }
+  .demo-card, .chatbot-window, .workflow-visual { min-width: 0; max-width: 100%; overflow: hidden; }
+  .demo-card { padding: 1.1rem; }
+  .chatbot-window input { min-width: 0; width: 100%; }
+  .section-title { font-size: clamp(2rem, 10vw, 3rem); }
 }
 @media (max-width: 640px) {
   .nav-links { display: none; }
