@@ -572,7 +572,11 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 .industry-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); }
 .industry-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
 .industry-card h4 { font-family: Inter, Georgia, serif; font-size: 1rem; margin-bottom: 0.3rem; }
-.industry-card p { font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+  .industry-card p { font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+  .industry-card { display: block; color: inherit; text-decoration: none; cursor: pointer; }
+  .industry-help-link { display: inline-block; margin-top: 1rem; color: var(--accent3); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; transition: color 0.3s, transform 0.3s; }
+  .industry-card:hover .industry-help-link { color: var(--accent4); transform: translateX(3px); }
+
 
 /* TESTIMONIALS */
 #testimonials { background: var(--bg); }
@@ -1020,14 +1024,14 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
     <p class="section-sub">AI solutions tailored to the specific demands of your sector.</p>
   </div>
   <div class="industries-grid">
-    <div class="industry-card"><span class="industry-icon">🏠</span><h4>Real Estate</h4><p>Lead qualification, instant follow-ups, appointment booking</p></div>
-    <div class="industry-card"><span class="industry-icon">⚖️</span><h4>Law Firms</h4><p>Client intake automation, scheduling, document handling</p></div>
-    <div class="industry-card"><span class="industry-icon">🏥</span><h4>Healthcare</h4><p>Patient booking, reminders, follow-up care sequences</p></div>
-    <div class="industry-card"><span class="industry-icon">🛍️</span><h4>E-Commerce</h4><p>Cart recovery, customer support, post-purchase flows</p></div>
-    <div class="industry-card"><span class="industry-icon">🎓</span><h4>Education</h4><p>Enrolment automation, student support, lead nurturing</p></div>
-    <div class="industry-card"><span class="industry-icon">🚗</span><h4>Automotive</h4><p>Dealership inquiries, test drive bookings, follow-ups</p></div>
-    <div class="industry-card"><span class="industry-icon">🏡</span><h4>Home Services</h4><p>Quote automation, booking, seasonal outreach campaigns</p></div>
-    <div class="industry-card"><span class="industry-icon">💼</span><h4>B2B / SaaS</h4><p>Outbound prospecting, onboarding, retention automation</p></div>
+    <a class="industry-card" href="/industries/real-estate" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🏠</span><h4>Real Estate</h4><p>Lead qualification, instant follow-ups, appointment booking</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/law-firms" target="_blank" rel="noopener noreferrer"><span class="industry-icon">⚖️</span><h4>Law Firms</h4><p>Client intake automation, scheduling, document handling</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/healthcare" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🏥</span><h4>Healthcare</h4><p>Patient booking, reminders, follow-up care sequences</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/e-commerce" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🛍️</span><h4>E-Commerce</h4><p>Cart recovery, customer support, post-purchase flows</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/education" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🎓</span><h4>Education</h4><p>Enrolment automation, student support, lead nurturing</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/automotive" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🚗</span><h4>Automotive</h4><p>Dealership inquiries, test drive bookings, follow-ups</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/home-services" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🏡</span><h4>Home Services</h4><p>Quote automation, booking, seasonal outreach campaigns</p><span class="industry-help-link">How we help →</span></a>
+    <a class="industry-card" href="/industries/b2b-saas" target="_blank" rel="noopener noreferrer"><span class="industry-icon">💼</span><h4>B2B / SaaS</h4><p>Outbound prospecting, onboarding, retention automation</p><span class="industry-help-link">How we help →</span></a>
   </div>
 </section>
 
