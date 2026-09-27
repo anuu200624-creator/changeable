@@ -59,8 +59,11 @@ nav {
 }
 .logo { font-family: Inter, Georgia, serif; font-weight: 400; font-size: 1.65rem; color: var(--text); text-decoration: none; }
 .logo span { color: var(--accent); }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+  .mobile-menu-toggle { display: none; border: 0; background: transparent; padding: 0.5rem; cursor: pointer; }
+  .mobile-menu-toggle span { display: block; width: 1.35rem; height: 2px; margin: 4px 0; border-radius: 999px; background: var(--text); transition: transform 0.2s, opacity 0.2s; }
+
 
 /* Animated pill nav */
 .nav-pill-list {
@@ -690,28 +693,61 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-inner, .problem-grid, .solution-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  body { font-size: 17px; line-height: 1.6; }
+  nav { padding: 0.9rem 1rem; gap: 0.75rem; }
+  .logo { font-size: 1.35rem; }
+  .nav-pill { max-width: calc(100vw - 2rem); overflow-x: auto; scrollbar-width: none; }
+  .nav-pill::-webkit-scrollbar { display: none; }
+  .nav-links { gap: 0.85rem; white-space: nowrap; }
+  .hero-inner, .problem-grid, .solution-grid, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .hero-right { display: none; }
-  #globe-canvas { width: 100%; right: 0; opacity: 0.35; }
-  .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-left { padding: 4.5rem 1rem 2rem; }
+  .hero-left h1 { font-size: clamp(2.6rem, 12vw, 4.5rem); line-height: 0.98; }
+  .hero-stats { gap: 0.75rem; }
+  .results-grid, .industries-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .process-steps { grid-template-columns: 1fr; }
   .process-steps::before { display: none; }
-  .industries-grid { grid-template-columns: repeat(2, 1fr); }
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 3rem auto 0; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .demo-grid { grid-template-columns: 1fr; }
+  .faq-grid, .demo-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 }
 @media (max-width: 640px) {
-  .nav-links { display: none; }
-  .hero-stats { grid-template-columns: repeat(3, 1fr); }
-  .results-grid { grid-template-columns: repeat(2, 1fr); }
-  .industries-grid { grid-template-columns: repeat(2, 1fr); }
-  .cta-box { padding: 3rem 1.5rem; }
+  section { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .nav-links { display: flex; }
+  .nav-pill-item a { padding: 0.55rem 0.7rem; font-size: 0.72rem; }
+  .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero-stats strong { font-size: 1.15rem; }
+  .results-grid, .industries-grid, .services-grid { grid-template-columns: 1fr; }
+  .industry-card, .service-card { padding: 1.5rem 1.25rem; }
+  .cta-box { padding: 2.25rem 1.25rem; }
+  .footer-top, .footer-find-us { grid-template-columns: 1fr; }
   footer { flex-direction: column; text-align: center; }
-  .footer-top { grid-template-columns: 1fr; }
-  .footer-find-us { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .social-links { justify-content: center; }
+  html, body { width: 100vw; max-width: 100vw; overflow-x: hidden; }
+  #hero, .hero-inner, .hero-left { width: 100%; max-width: 100%; box-sizing: border-box; overflow-x: hidden; }
+  #hero { min-height: auto; align-items: flex-start; padding: 2.25rem 1rem 3rem; }
+  nav { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 0.65rem; padding: 0.7rem 0.65rem; }
+  .logo { align-self: center; font-size: 1.25rem; }
+  .mobile-menu-toggle { display: block; position: absolute; top: 0.75rem; right: 0.75rem; z-index: 12; }
+  .nav-pill-list { display: none; grid-template-columns: 1fr; width: 100%; max-width: none; gap: 0.15rem; padding: 0.35rem; overflow: visible; border-radius: 1rem; }
+  .nav-pill-list.is-open { display: grid; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-cursor { display: none; }
+  .nav-pill-item { min-width: 0; }
+  .nav-pill-item a, .nav-pill-item.cta-item a { display: block; padding: 0.72rem 0.65rem; font-size: 0.86rem; line-height: 1.1; letter-spacing: 0; text-align: left; white-space: normal; }
+  .nav-pill-item.cta-item { grid-column: auto; }
+  .hero-left { padding-top: 1.35rem; }
+  .badge { align-self: flex-start; margin-bottom: 1.25rem; max-width: 100%; font-size: 0.72rem; }
+  .hero-left h1 { max-width: 100%; font-size: clamp(2.1rem, 11.5vw, 3.5rem); line-height: 1.02; overflow-wrap: anywhere; word-break: normal; }
+  .hero-ctas { width: 100%; flex-direction: column; align-items: stretch; }
+  .hero-ctas a { text-align: center; }
+  .demo-card, .chatbot-window, .workflow-visual { min-width: 0; max-width: 100%; overflow: hidden; }
+  .demo-card { padding: 1.1rem; }
+  .chatbot-window input { min-width: 0; width: 100%; }
+  .section-title { font-size: clamp(2rem, 10vw, 3rem); }
 }
 </style>
 </head>
@@ -726,6 +762,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
       <div class="mt-inner" id="mt-logo-inner"><span class="mt-hover-text">Home ✦</span></div>
     </div>
   </a>
+  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="navPillList" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
   <ul class="nav-pill-list" id="navPillList">
     <div class="nav-cursor" id="navCursor"></div>
 <li class="nav-pill-item"><a href="#services">Services</a></li>
@@ -2168,5 +2205,39 @@ document.querySelectorAll('img').forEach(img => {
   if (img.complete) { img.style.opacity = '1'; }
 });
 </script>
-</body>
-</html>
+<script>
+  (() => {
+    const prefetched = new Set();
+    const prefetch = (href) => {
+      if (!href || prefetched.has(href) || !/^\/(service|industries|locations)\//.test(href)) return;
+      prefetched.add(href);
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = href;
+      link.as = 'document';
+      document.head.appendChild(link);
+    };
+    document.addEventListener('pointerover', (event) => {
+      const link = event.target.closest('a[href]');
+      if (link) prefetch(link.getAttribute('href'));
+    }, { passive: true });
+  })();
+  </script>
+  <script>
+  (() => {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('#navPillList');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('is-open', !isOpen);
+    });
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+    }));
+  })();
+  </script>
+  </body>
+  </html>
