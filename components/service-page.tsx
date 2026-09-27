@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import type { Service } from '@/lib/services'
+import { FindUsFooter } from '@/components/find-us-footer'
 
 export function ServicePage({ service }: { service: Service }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -67,6 +68,8 @@ export function ServicePage({ service }: { service: Service }) {
       <section className="border-t border-purple-500/15 px-6 py-24 md:px-12"><div className="mx-auto max-w-3xl"><p className="text-sm uppercase tracking-[0.25em] text-purple-300">Questions</p><h2 className="mt-4 font-serif text-4xl md:text-6xl">A clearer next step.</h2><div className="mt-10 divide-y divide-purple-500/20">{service.faqs.map((faq, index) => <div key={faq.question}><button type="button" className="flex w-full items-center justify-between gap-6 py-6 text-left text-xl" onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}>{faq.question}<span className="text-2xl text-purple-300">{openFaq === index ? '−' : '+'}</span></button>{openFaq === index && <p className="pb-6 text-purple-100/60">{faq.answer}</p>}</div>)}</div></div></section>
 
       <section className="px-6 pb-24 md:px-12"><div className="mx-auto max-w-7xl rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-900/50 to-fuchsia-900/20 p-8 md:p-16"><p className="text-sm uppercase tracking-[0.25em] text-fuchsia-200">Ready when you are</p><h2 className="mt-5 max-w-3xl font-serif text-4xl md:text-7xl">Let&apos;s build the system your business has been missing.</h2><Link href="/#contact" className="mt-8 inline-flex rounded-full bg-white px-7 py-3 font-medium text-black transition hover:bg-purple-100">Book a free strategy call</Link></div></section>
+
+      <FindUsFooter />
 
       <footer className="border-t border-purple-500/15 px-6 py-10 text-sm text-purple-200/50 md:px-12"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 md:flex-row"><span>© 2025 CreationsXAI</span><span>AI systems for ambitious businesses in Mumbai and beyond.</span></div></footer>
     </main>

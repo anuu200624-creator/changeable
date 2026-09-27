@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { locations, locationServices, maharashtraAreas, type Location } from '@/lib/locations'
+import { FindUsFooter } from '@/components/find-us-footer'
 
 const serviceIcons = ['◌', '✦', '↗', '◎', '◍', '◇', '→', '＋']
 
@@ -12,8 +13,9 @@ function NetworkVisual() {
 }
 
 function Footer() {
-  return <footer className="border-t border-purple-500/15 px-6 py-10 text-sm text-purple-200/55 md:px-12"><div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between"><div><p className="font-serif text-lg text-white">Creations<span className="text-purple-400">XAI</span></p><p className="mt-2">Based in Mumbai. Serving businesses across Maharashtra.</p></div><div className="flex max-w-3xl flex-wrap gap-x-5 gap-y-2">{locations.map((location) => <Link key={location.slug} href={`/locations/${location.slug}`} className="transition hover:text-white">{location.name}</Link>)}</div></div></footer>
+  return <><footer className="border-t border-purple-500/15 px-6 py-10 text-sm text-purple-200/55 md:px-12"><div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-start md:justify-between"><div><p className="font-serif text-lg text-white">Creations<span className="text-purple-400">XAI</span></p><p className="mt-2">Based in Mumbai. Serving businesses across Maharashtra.</p></div><div className="flex max-w-3xl flex-wrap gap-x-5 gap-y-2">{locations.map((location) => <Link key={location.slug} href={`/locations/${location.slug}`} className="transition hover:text-white">{location.name}</Link>)}</div>  </div></footer><FindUsFooter /></>
 }
+
 
 function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) { return <div className="max-w-3xl"><p className="text-sm uppercase tracking-[0.25em] text-purple-300">{eyebrow}</p><h2 className="mt-4 font-serif text-4xl leading-tight text-white md:text-6xl">{title}</h2>{copy && <p className="mt-5 text-lg leading-relaxed text-purple-100/60">{copy}</p>}</div> }
 

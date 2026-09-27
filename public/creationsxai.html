@@ -671,7 +671,14 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
 .footer-col ul li a:hover { color: var(--text); }
 .footer-logo { font-family: Inter, Georgia, serif; font-weight: 400; font-size: 1.3rem; color: var(--text); text-decoration: none; }
 .footer-logo span { color: var(--accent); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
+  .footer-find-us { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem; margin: 0 0 3rem; padding: 2rem 0 3rem; border-bottom: 1px solid var(--border); }
+  .footer-find-copy h5 { font-family: Inter, Georgia, serif; font-size: 1.15rem; margin-bottom: 0.8rem; color: var(--text); }
+  .footer-find-copy p { color: var(--muted); line-height: 1.7; max-width: 360px; }
+  .footer-contact-list { display: grid; gap: 0.5rem; margin-top: 1rem; color: var(--muted); }
+  .footer-map { min-height: 230px; overflow: hidden; border: 1px solid var(--border); border-radius: 1.25rem; background: rgba(124,58,237,0.08); }
+  .footer-map iframe { width: 100%; height: 100%; min-height: 230px; border: 0; display: block; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
+
 .footer-bottom p { color: var(--muted); font-size: 0.82rem; }
 .social-links { display: flex; gap: 1rem; }
 .social-link { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: border-color 0.2s, color 0.2s; }
@@ -699,6 +706,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   .cta-box { padding: 3rem 1.5rem; }
   footer { flex-direction: column; text-align: center; }
   .footer-top { grid-template-columns: 1fr; }
+  .footer-find-us { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
 </style>
@@ -1693,6 +1701,21 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">Terms of Service</a></li>
       </ul>
+    </div>
+  </div>
+  <div class="footer-find-us">
+    <div class="footer-find-copy">
+      <h5>Find Us</h5>
+      <p>Connect with CreationsXAI for practical AI automation systems built for growing businesses.</p>
+      <div class="footer-contact-list">
+        <span><strong>Company:</strong> CreationsXAI</span>
+        <span><strong>Phone:</strong> <a href="tel:+919321012155">+91 9321012155</a></span>
+        <span><strong>Email:</strong> <a href="mailto:jayingle215@gmail.com">jayingle215@gmail.com</a></span>
+        <span><strong>Location:</strong> Mumbai, Maharashtra</span>
+      </div>
+    </div>
+    <div class="footer-map">
+      <iframe title="CreationsXAI location on Google Maps" src="https://maps.app.goo.gl/2YZWrBvpKJyRb8Hf6" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
   <div class="footer-bottom">
