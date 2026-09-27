@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const mapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.842507087077!2d72.85856781078904!3d19.272503381897884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1e2a84cc40f%3A0x73b3c10b78e03766!2sCreationsXAI!5e1!3m2!1sen!2sin!4v1790535616877!5m2!1sen!2sin'
+const mapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.842507087077!2d72.85856781078904!3d19.272503381897884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1e2a84cc40f%3A0x73b3c10b78e03766!2sCreationsXAI!5e1!3m2!1sen!2sin!4v1790535887147!5m2!1sen!2sin'
 
 export function FindUsFooter() {
   return (
