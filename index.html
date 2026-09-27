@@ -301,9 +301,12 @@ body.loaded { opacity: 1; }
 ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #7c3aed, #e879f9); border-radius: 10px; }
 
 /* Cursor glow follower */
-#cursor-glow {
+  #cursor-glow {
   position: fixed;
   width: 340px; height: 340px;
+  pointer-events: none;
+  contain: strict;
+  will-change: left, top;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(124,58,237,0.09) 0%, transparent 70%);
   pointer-events: none;
@@ -572,7 +575,11 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 .industry-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); }
 .industry-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
 .industry-card h4 { font-family: 'Instrument Serif', Georgia, serif; font-size: 1rem; margin-bottom: 0.3rem; }
-.industry-card p { font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+  .industry-card p { font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+  .industry-card { display: block; color: inherit; text-decoration: none; cursor: pointer; }
+  .industry-help-link { display: inline-block; margin-top: 1rem; color: var(--accent3); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; transition: color 0.3s, transform 0.3s; }
+  .industry-card:hover .industry-help-link { color: var(--accent4); transform: translateX(3px); }
+
 
 /* TESTIMONIALS */
 #testimonials { background: var(--bg); }
@@ -1011,14 +1018,14 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
     <p class="section-sub">AI solutions tailored to the specific demands of your sector.</p>
   </div>
   <div class="industries-grid">
-    <div class="industry-card"><span class="industry-icon">🏠</span><h4>Real Estate</h4><p>Lead qualification, instant follow-ups, appointment booking</p></div>
-    <div class="industry-card"><span class="industry-icon">⚖️</span><h4>Law Firms</h4><p>Client intake automation, scheduling, document handling</p></div>
-    <div class="industry-card"><span class="industry-icon">🏥</span><h4>Healthcare</h4><p>Patient booking, reminders, follow-up care sequences</p></div>
-    <div class="industry-card"><span class="industry-icon">🛍️</span><h4>E-Commerce</h4><p>Cart recovery, customer support, post-purchase flows</p></div>
-    <div class="industry-card"><span class="industry-icon">🎓</span><h4>Education</h4><p>Enrolment automation, student support, lead nurturing</p></div>
-    <div class="industry-card"><span class="industry-icon">🚗</span><h4>Automotive</h4><p>Dealership inquiries, test drive bookings, follow-ups</p></div>
-    <div class="industry-card"><span class="industry-icon">🏡</span><h4>Home Services</h4><p>Quote automation, booking, seasonal outreach campaigns</p></div>
-    <div class="industry-card"><span class="industry-icon">💼</span><h4>B2B / SaaS</h4><p>Outbound prospecting, onboarding, retention automation</p></div>
+  <a class="industry-card" href="/industries/real-estate" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🏠</span><h4>Real Estate</h4><p>Lead qualification, instant follow-ups, appointment booking</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/law-firms" target="_blank" rel="noopener noreferrer"><span class="industry-icon">⚖️</span><h4>Law Firms</h4><p>Client intake automation, scheduling, document handling</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/healthcare" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🏥</span><h4>Healthcare</h4><p>Patient booking, reminders, follow-up care sequences</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/e-commerce" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🛍️</span><h4>E-Commerce</h4><p>Cart recovery, customer support, post-purchase flows</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/education" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🎓</span><h4>Education</h4><p>Enrolment automation, student support, lead nurturing</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/automotive" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🚗</span><h4>Automotive</h4><p>Dealership inquiries, test drive bookings, follow-ups</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/home-services" target="_blank" rel="noopener noreferrer"><span class="industry-icon">🏡</span><h4>Home Services</h4><p>Quote automation, booking, seasonal outreach campaigns</p><span class="industry-help-link">How we help →</span></a>
+  <a class="industry-card" href="/industries/b2b-saas" target="_blank" rel="noopener noreferrer"><span class="industry-icon">💼</span><h4>B2B / SaaS</h4><p>Outbound prospecting, onboarding, retention automation</p><span class="industry-help-link">How we help →</span></a>
   </div>
 </section>
 
@@ -1147,7 +1154,11 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
       margin-top: 80px;
       letter-spacing: 0.05em;
     }
-  </style>
+/* Serif hierarchy for all headings across the site */
+  h1, h2, h3, h4, h5, h6, .section-title {
+    font-family: Georgia, "Times New Roman", serif !important;
+  }
+</style>
 
   <div class="acs-scene" id="acs-scene">
     <div class="acs-sticky">
@@ -1707,8 +1718,9 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   const PURPLE_DARK = 0x7c3aed, PURPLE_MID = 0xa855f7, PURPLE_LIGHT = 0xc084fc;
   const canvas = document.getElementById('globe-canvas');
   const heroEl = document.getElementById('hero');
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isTouchDevice ? 1 : 1.5));
   renderer.setClearColor(0x000000, 0);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
@@ -1757,11 +1769,17 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   // Mouse-driven rotation
   let mouseX=0,mouseY=0,targetRotX=0,targetRotY=0,currentRotX=0,currentRotY=0;
   const heroRect = {left:0,top:0,width:window.innerWidth,height:window.innerHeight};
-  window.addEventListener('mousemove',e=>{
-    const nx=(e.clientX/window.innerWidth-0.5)*2;
-    const ny=(e.clientY/window.innerHeight-0.5)*2;
-    targetRotY+=nx*0.04; targetRotX+=ny*0.04;
-  });
+  let pointerFrame = 0;
+  window.addEventListener('pointermove', e => {
+    if (isTouchDevice || pointerFrame) return;
+    pointerFrame = requestAnimationFrame(() => {
+      const nx = (e.clientX / window.innerWidth - 0.5) * 2;
+      const ny = (e.clientY / window.innerHeight - 0.5) * 2;
+      targetRotY = nx * 0.04;
+      targetRotX = ny * 0.04;
+      pointerFrame = 0;
+    });
+  }, { passive: true });
 
   const clock=new THREE.Clock();
   function animate(){
@@ -1804,6 +1822,8 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   ];
 
   const cards = document.querySelectorAll(CARD_SELECTORS.join(','));
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!supportsHover) return;
 
   cards.forEach(card => {
     card.classList.add('tilt-card');
