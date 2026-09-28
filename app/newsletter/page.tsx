@@ -39,7 +39,7 @@ export default function NewsletterPage() {
           <p className="text-sm uppercase tracking-[0.25em] text-fuchsia-300">The CreationsXAI newsletter</p>
           <h1 className="mx-auto mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-tight md:text-8xl">Get Smarter About AI Automation</h1>
           <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-purple-100/65 md:text-2xl">Practical AI automation strategies, tools, and ideas to help your business save time, capture more leads, and operate more efficiently.</p>
-          <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-purple-400/20 bg-white/[0.04] p-5 text-left md:p-7"><NewsletterForm /><p className="mt-4 text-center text-xs text-purple-200/55">No spam. Just useful AI automation insights.</p></div>
+          <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/10 to-fuchsia-500/[0.04] p-5 text-left shadow-[0_20px_80px_rgba(124,58,237,0.14)] md:p-7"><div className="mb-5 flex items-center gap-3 text-sm text-purple-100/70"><span className="flex size-8 items-center justify-center rounded-full bg-fuchsia-400/15 text-fuchsia-200">✦</span><span>Join business owners building smarter systems</span></div><NewsletterForm /><p className="mt-5 flex items-center justify-center gap-2 text-center text-xs text-purple-200/55"><span className="text-emerald-300">●</span> No spam. Unsubscribe anytime.</p></div>
         </div>
       </section>
 
