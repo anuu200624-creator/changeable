@@ -31,14 +31,14 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
   return (
     <form onSubmit={handleSubmit} noValidate className={compact ? 'flex flex-col gap-3 sm:flex-row' : 'space-y-4'}>
       <div className="min-w-0 flex-1">
-        <label htmlFor={inputId} className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-purple-100/65">Email address</label>
+        <label htmlFor={inputId} className="sr-only">Email address</label>
         <div className="group relative">
           <input
             id={inputId}
             type="email"
             inputMode="email"
             autoComplete="email"
-            placeholder="you@company.com"
+            placeholder="Enter your email address"
             value={email}
             onChange={(event) => { setEmail(event.target.value); setStatus('idle') }}
             aria-invalid={status === 'error'}
@@ -49,7 +49,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
         {status === 'error' ? <p id={errorId} role="alert" className="mt-2 px-1 text-sm text-fuchsia-200">Enter a valid email address.</p> : <p id={helperId} className="mt-2 px-1 text-xs text-purple-200/55">One useful email when we have something worth sharing.</p>}
       </div>
       <button type="submit" className="group inline-flex min-h-14 items-center justify-center gap-3 border border-fuchsia-200/70 bg-fuchsia-200 px-7 py-4 font-medium text-purple-950 transition hover:-translate-y-0.5 hover:bg-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-300/40">
-        Send me the next issue <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+        Subscribe <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
       </button>
     </form>
   )

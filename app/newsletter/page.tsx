@@ -33,21 +33,21 @@ export default function NewsletterPage() {
         </nav>
       </header>
 
-      <section className="relative border-b border-purple-300/15 px-6 pb-24 pt-36 md:px-12 md:pb-32 md:pt-48">
-        <div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-[1.15fr_0.85fr] md:items-end md:gap-20">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-fuchsia-300">Issue 01 / CreationsXAI dispatch</p>
-            <h1 className="mt-7 max-w-4xl font-serif text-5xl leading-[0.94] tracking-[-0.04em] md:text-8xl">The useful side of AI automation.</h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-purple-100/65 md:text-xl">A considered note on the tools, workflows, and decisions that make a business run better.</p>
+      <section className="relative border-b border-purple-300/15 px-6 pb-20 pt-32 md:px-12 md:pb-24 md:pt-40">
+        <div className="mx-auto grid max-w-6xl gap-12 rounded-[2rem] border border-purple-300/15 bg-purple-950/20 px-6 py-10 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:px-12 md:py-14">
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-fuchsia-300">STAY AHEAD</p>
+              <h1 className="mt-6 max-w-2xl font-serif text-5xl leading-[0.96] tracking-[-0.035em] md:text-7xl">Get Smarter About AI Automation</h1>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-purple-100/65">Practical AI automation strategies, tools, and ideas to help your business save time, capture more leads, and operate more efficiently.</p>
+            </div>
+            <div className="mt-10 flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-purple-200/45"><span className="h-px w-14 bg-fuchsia-300/60" />Practical ideas for better systems</div>
           </div>
-          <div className="border-t border-purple-300/25 pt-5 md:mb-2">
-            <p className="text-sm leading-relaxed text-purple-100/60">Written for operators, founders, and teams who want practical progress instead of more noise.</p>
-            <div className="mt-8 border-l border-fuchsia-300/60 pl-5"><p className="font-serif text-2xl leading-tight text-purple-50">One thoughtful email. When there&apos;s something worth sharing.</p></div>
+          <div className="border-t border-purple-300/25 pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0 md:flex md:flex-col md:justify-center">
+            <p className="mb-6 text-sm uppercase tracking-[0.18em] text-purple-100/60">Email address</p>
+            <NewsletterForm />
+            <p className="mt-5 text-sm text-purple-200/50">No spam. Just useful AI automation insights.</p>
           </div>
-        </div>
-        <div className="mx-auto mt-16 grid max-w-7xl gap-10 border-t border-purple-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:items-start md:gap-20">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-200/55">Subscribe free</p><p className="mt-3 text-sm text-purple-200/50">No spam. Unsubscribe anytime.</p></div>
-          <div className="max-w-xl"><NewsletterForm /></div>
         </div>
       </section>
 
