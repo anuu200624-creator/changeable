@@ -12,6 +12,7 @@ function absoluteUrl(path: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: absoluteUrl('/'), changeFrequency: 'weekly', priority: 1 },
+    { url: absoluteUrl('/newsletter'), changeFrequency: 'monthly', priority: 0.7 },
     { url: absoluteUrl('/locations'), changeFrequency: 'monthly', priority: 0.7 },
     { url: absoluteUrl('/locations/maharashtra'), changeFrequency: 'monthly', priority: 0.7 },
   ]
