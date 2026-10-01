@@ -13,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = getService(slug)
   if (!service) return {}
+  if (service.slug === 'ai-voice-agents') {
+    return {
+      title: 'AI Voice Agents Mumbai | CreationsXAI',
+      description: 'Build AI voice agents for inbound calls, lead qualification, appointment booking, follow-up, and customer service automation with CreationsXAI in Mumbai.',
+      alternates: { canonical: `https://creationsxai.space/service/${service.slug}` },
+    }
+  }
   return { title: `${service.title} | CreationsXAI`, description: service.description, alternates: { canonical: `https://creationsxai.space/service/${service.slug}` } }
 }
 
