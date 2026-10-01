@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Best AI Agency Mumbai | CreationsXAI',
+  title: 'Best AI Automation Agency in Mumbai | AI Voice Agents & Automation',
   description: 'Created with v0',
   generator: 'v0.app',
   icons: {
