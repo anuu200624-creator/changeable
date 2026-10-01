@@ -498,7 +498,7 @@ section { position: relative; z-index: 1; padding: 6rem 6vw; }
 .service-card:hover { background: var(--surface2); }
 .service-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
 .si-purple { background: rgba(124,58,237,0.18); } .si-teal { background: rgba(168,85,247,0.14); } .si-pink { background: rgba(192,132,252,0.14); } .si-amber { background: rgba(124,58,237,0.10); } .si-blue { background: rgba(168,85,247,0.10); } .si-green { background: rgba(16,185,129,0.12); }
-.service-card h3 { font-family: Inter, Georgia, serif; font-weight: 400; font-size: 1.5rem; margin-bottom: 0.6rem; }
+.service-card h2 { font-family: Inter, Georgia, serif; font-weight: 400; font-size: 1.5rem; margin-bottom: 0.6rem; }
 .service-card p { font-size: 1rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
 .service-tag { display: inline-block; margin-top: 1.2rem; font-size: 0.85rem; padding: 0.22rem 0.7rem; border-radius: 100px; border: 1px solid var(--border); color: var(--muted); }
 
@@ -958,12 +958,12 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
     <p class="section-sub">End-to-end AI solutions from intelligent voice agents to full-stack websites.</p>
   </div>
   <div class="services-grid">
-<a class="service-card" href="/service/ai-voice-agents" target="_top"><div class="service-icon si-purple">🎙️</div><h3>AI Voice Agents</h3><p>Conversational AI phone agents handling inbound & outbound calls, qualifying leads, booking appointments and supporting customers 24/7, zero fatigue.</p><span class="service-tag">Inbound & Outbound</span></a>
- <a class="service-card" href="/service/ai-chatbots" target="_top"><div class="service-icon si-teal">🤖</div><h3>AI Chatbots</h3><p>Smart, context-aware chatbots trained on your business data. Deployed on your website, WhatsApp, Messenger wherever your customers are.</p><span class="service-tag">Multi-platform</span></a>
- <a class="service-card" href="/service/ai-workflow-automation" target="_top"><div class="service-icon si-pink">⚡</div><h3>AI Workflow Automation</h3><p>Automate CRM updates, data entry, email sequences, lead routing, and reporting so your team stops wasting hours on repetitive work.</p><span class="service-tag">End-to-end workflows</span></a>
- <a class="service-card" href="/service/ai-lead-generation" target="_top"><div class="service-icon si-green">🎯</div><h3>AI Lead Generation</h3><p>Personalised outreach at scale AI-crafted emails, LinkedIn sequences, and follow-up campaigns that generate qualified pipeline consistently.</p><span class="service-tag">Scalable Outreach</span></a>
- <a class="service-card" href="/service/website-design-development" target="_top"><div class="service-icon si-amber">🌐</div><h3>Website Design & Dev</h3><p>High-converting, fast, and beautiful websites built for performance. Custom-coded, responsive, and optimised for your goals and audience.</p><span class="service-tag">Responsive & Fast</span></a>
- <a class="service-card" href="/service/seo-growth" target="_top"><div class="service-icon si-blue">📈</div><h3>SEO & Growth</h3><p>AI-assisted SEO strategies that drive organic traffic, improve rankings, and build lasting visibility without shortcuts or black-hat tricks.</p><span class="service-tag">Long-term results</span></a>
+<a class="service-card" href="/service/ai-voice-agents" target="_top"><div class="service-icon si-purple">🎙️</div><h2>AI Voice Agents</h2><p>Conversational AI phone agents handling inbound & outbound calls, qualifying leads, booking appointments and supporting customers 24/7, zero fatigue.</p><span class="service-tag">Inbound & Outbound</span></a>
+ <a class="service-card" href="/service/ai-chatbots" target="_top"><div class="service-icon si-teal">🤖</div><h2>AI Chatbots</h2><p>Smart, context-aware chatbots trained on your business data. Deployed on your website, WhatsApp, Messenger wherever your customers are.</p><span class="service-tag">Multi-platform</span></a>
+ <a class="service-card" href="/service/ai-workflow-automation" target="_top"><div class="service-icon si-pink">⚡</div><h2>AI Workflow Automation</h2><p>Automate CRM updates, data entry, email sequences, lead routing, and reporting so your team stops wasting hours on repetitive work.</p><span class="service-tag">End-to-end workflows</span></a>
+ <a class="service-card" href="/service/ai-lead-generation" target="_top"><div class="service-icon si-green">🎯</div><h2>AI Lead Generation</h2><p>Personalised outreach at scale AI-crafted emails, LinkedIn sequences, and follow-up campaigns that generate qualified pipeline consistently.</p><span class="service-tag">Scalable Outreach</span></a>
+ <a class="service-card" href="/service/website-design-development" target="_top"><div class="service-icon si-amber">🌐</div><h2>Website Design & Development</h2><p>High-converting, fast, and beautiful websites built for performance. Custom-coded, responsive, and optimised for your goals and audience.</p><span class="service-tag">Responsive & Fast</span></a>
+ <a class="service-card" href="/service/seo-growth" target="_top"><div class="service-icon si-blue">📈</div><h2>SEO & Growth</h2><p>AI-assisted SEO strategies that drive organic traffic, improve rankings, and build lasting visibility without shortcuts or black-hat tricks.</p><span class="service-tag">Long-term results</span></a>
   </div>
 </section>
 
@@ -1933,7 +1933,6 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   // h1 words with gradient on "20+ Hours"
   const h1El = document.getElementById('hero-h1');
   const h1Words = [
-  { text: '#1 ', gradient: false },
   { text: 'AI ', gradient: true },
   { text: 'Automation ', gradient: true },
   { text: 'Agency ', gradient: true },
