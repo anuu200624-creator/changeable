@@ -8,21 +8,21 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #000000;
-  --surface: #0a0010;
-  --surface2: #100020;
-  --surface3: #0d0018;
-  --accent: #7c3aed;
-  --accent2: #a855f7;
-  --accent3: #c084fc;
-  --accent4: #e879f9;
-  --text: #f5f0ff;
-  --muted: #9575cd;
-  --muted2: #b39ddb;
-  --border: rgba(124,58,237,0.22);
-  --glow: rgba(124,58,237,0.4);
-  --green: #10b981;
-  --red: #f43f5e;
+  --bg: #051f20;
+  --surface: #0b2b26;
+  --surface2: #163832;
+  --surface3: #235347;
+  --accent: #8eb69b;
+  --accent2: #afcdb8;
+  --accent3: #c5dfcc;
+  --accent4: #daf1de;
+  --text: #daf1de;
+  --muted: #8eb69b;
+  --muted2: #b8d4c0;
+  --border: rgba(142,182,155,0.22);
+  --glow: rgba(142,182,155,0.4);
+  --green: #8eb69b;
+  --red: #d99a9a;
 }
 html { scroll-behavior: smooth; }
 body {
@@ -162,7 +162,7 @@ nav {
 .badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.3);
-  color: #c084fc; font-size: 0.9rem; font-weight: 500;
+  color: #c5dfcc; font-size: 0.9rem; font-weight: 500;
   padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 1.8rem;
   letter-spacing: 0.06em; text-transform: uppercase;
   animation: fadeUp 0.7s ease both; width: fit-content;
@@ -176,7 +176,7 @@ h1 {
   letter-spacing: -0.01em; animation: fadeUp 0.8s 0.1s ease both;
 }
 h1 .gradient {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #e879f9 100%);
+  background: linear-gradient(135deg, #8eb69b 0%, #afcdb8 50%, #daf1de 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .hero-sub {
@@ -238,7 +238,7 @@ h1 .gradient {
   transform: translateY(0);
 }
 .te-gradient {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #e879f9 100%);
+  background: linear-gradient(135deg, #8eb69b 0%, #afcdb8 50%, #daf1de 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -301,7 +301,7 @@ body.loaded { opacity: 1; }
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #7c3aed, #e879f9); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #8eb69b, #daf1de); border-radius: 10px; }
 
 /* Cursor glow follower */
 #cursor-glow {
@@ -1171,7 +1171,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
       object-fit: cover;
       border: 2px solid rgba(139,92,246,0.5);
       flex-shrink: 0;
-      background: linear-gradient(135deg,#7c3aed,#4f46e5);
+      background: linear-gradient(135deg,#8eb69b,#4f46e5);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1204,7 +1204,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
       transition: background 0.3s, transform 0.3s;
     }
     .acs-dot.active {
-      background: #7c3aed;
+      background: #8eb69b;
       transform: scale(1.4);
     }
     .acs-hint {
@@ -1383,7 +1383,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
     <div style="position:absolute; width:460px; height:460px; border-radius:50%; border:1px dashed rgba(139,92,246,0.15); pointer-events:none;"></div>
 
     <!-- Center glowing core -->
-    <div id="orbital-core" style="position:absolute; width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#7c3aed,#4f46e5,#0ea5e9); display:flex; align-items:center; justify-content:center; z-index:10; box-shadow:0 0 40px rgba(124,58,237,0.6), 0 0 80px rgba(79,70,229,0.3);">
+    <div id="orbital-core" style="position:absolute; width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#8eb69b,#4f46e5,#0ea5e9); display:flex; align-items:center; justify-content:center; z-index:10; box-shadow:0 0 40px rgba(124,58,237,0.6), 0 0 80px rgba(79,70,229,0.3);">
       <div style="position:absolute; width:80px; height:80px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); animation:ping 2s cubic-bezier(0,0,0.2,1) infinite;"></div>
       <div style="position:absolute; width:96px; height:96px; border-radius:50%; border:1px solid rgba(255,255,255,0.1); animation:ping 2s cubic-bezier(0,0,0.2,1) infinite; animation-delay:0.6s;"></div>
       <span style="font-size:22px;">⚡</span>
@@ -1407,7 +1407,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
         <span id="tt-energy" style="font-size:11px; font-family:monospace; color:#a78bfa;"></span>
       </div>
       <div style="width:100%; height:3px; background:rgba(255,255,255,0.08); border-radius:99px; overflow:hidden;">
-        <div id="tt-bar" style="height:100%; background:linear-gradient(90deg,#4f46e5,#7c3aed); border-radius:99px; transition:width 0.4s;"></div>
+        <div id="tt-bar" style="height:100%; background:linear-gradient(90deg,#4f46e5,#8eb69b); border-radius:99px; transition:width 0.4s;"></div>
       </div>
     </div>
   </div>
@@ -1806,7 +1806,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (function() {
-  const PURPLE_DARK = 0x7c3aed, PURPLE_MID = 0xa855f7, PURPLE_LIGHT = 0xc084fc;
+  const PURPLE_DARK = 0x8eb69b, PURPLE_MID = 0xafcdb8, PURPLE_LIGHT = 0xc5dfcc;
   const canvas = document.getElementById('globe-canvas');
   const heroEl = document.getElementById('hero');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -1821,7 +1821,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   const wireMat = new THREE.MeshBasicMaterial({ color: PURPLE_MID, wireframe: true, transparent: true, opacity: 0.18 });
   globeGroup.add(new THREE.Mesh(wireGeo, wireMat));
   const coreGeo = new THREE.SphereGeometry(0.96, 64, 64);
-  const coreMat = new THREE.MeshBasicMaterial({ color: 0x0a0018, transparent: true, opacity: 0.85 });
+  const coreMat = new THREE.MeshBasicMaterial({ color: 0x0b2b26, transparent: true, opacity: 0.85 });
   globeGroup.add(new THREE.Mesh(coreGeo, coreMat));
   const ringMat = new THREE.LineBasicMaterial({ color: PURPLE_LIGHT, transparent: true, opacity: 0.30 });
   [-60,-40,-20,0,20,40,60].forEach(lat => {
@@ -1835,7 +1835,7 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
     for(let j=0;j<=64;j++){const phi=(j/64)*Math.PI-Math.PI/2;pts.push(new THREE.Vector3(Math.cos(phi)*Math.cos(lng),Math.sin(phi),Math.cos(phi)*Math.sin(lng)));}
     globeGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), arcMat));
   }
-  const DOT_COUNT=120, dotColors=[PURPLE_DARK,PURPLE_MID,PURPLE_LIGHT,0xe879f9];
+  const DOT_COUNT=120, dotColors=[PURPLE_DARK,PURPLE_MID,PURPLE_LIGHT,0xdaf1de];
   const dotGeo=new THREE.BufferGeometry(), positions=new Float32Array(DOT_COUNT*3), colArr=new Float32Array(DOT_COUNT*3);
   for(let i=0;i<DOT_COUNT;i++){
     const t=Math.acos(2*Math.random()-1),p=Math.random()*Math.PI*2;
