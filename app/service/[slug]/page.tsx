@@ -13,6 +13,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = getService(slug)
   if (!service) return {}
+  if (service.slug === 'website-design-development') {
+    return {
+      title: 'Website Design and Development Mumbai | CreationsXAI',
+      description: 'Responsive, SEO-friendly website design and development in Mumbai for businesses, HVAC companies, and home-service teams that want clearer enquiries and conversion opportunities.',
+      alternates: { canonical: `https://creationsxai.space/service/${service.slug}` },
+    }
+  }
+  if (service.slug === 'ai-lead-generation') {
+    return {
+      title: 'AI Lead Generation Mumbai | CreationsXAI',
+      description: 'AI lead generation in Mumbai for research, personalized outreach, lead qualification, automated follow-up, CRM updates, and sales workflow automation.',
+      alternates: { canonical: `https://creationsxai.space/service/${service.slug}` },
+    }
+  }
   if (service.slug === 'ai-workflow-automation') {
     return {
       title: 'AI Workflow Automation Mumbai | CreationsXAI',
