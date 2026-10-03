@@ -749,40 +749,6 @@ footer { position: relative; z-index: 1; background: var(--surface); border-top:
   .chatbot-window input { min-width: 0; width: 100%; }
   .section-title { font-size: clamp(2rem, 10vw, 3rem); }
 }
-/* CINEMATIC CENTERED HERO */
-body::after { background-image: linear-gradient(rgba(168,201,181,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(168,201,181,0.025) 1px, transparent 1px); background-size: 72px 72px; }
-nav { top: 1.25rem; left: 4vw; right: 4vw; width: auto; padding: 0.7rem 0.9rem 0.7rem 1.25rem; gap: 1rem; border: 1px solid rgba(168,201,181,0.2); border-radius: 9999px; background: rgba(6,26,25,0.7); backdrop-filter: blur(18px); }
-.logo { flex: 0 0 auto; }
-.nav-pill-list { margin-left: auto; max-width: 100%; }
-.nav-pill-item a { padding-left: 0.78rem; padding-right: 0.78rem; font-size: 0.86rem; }
-#hero { min-height: 100vh; padding: 9rem 5vw 3rem; background: radial-gradient(ellipse 75% 55% at 50% 72%, rgba(168,201,181,0.1), transparent 68%), radial-gradient(ellipse 90% 80% at 50% 45%, rgba(79,120,105,0.08), transparent 72%), linear-gradient(145deg, #061a19, #082522 55%, #101f2d); }
-.hero-inner { max-width: 1180px; }
-.hero-left { max-width: 920px; }
-.badge { margin-bottom: 2rem; background: rgba(8,37,34,0.62); border-color: rgba(168,201,181,0.35); color: #b9d7c3; box-shadow: 0 0 28px rgba(168,201,181,0.08); font-size: 0.72rem; }
-.badge-dot { background: #a8c9b5; box-shadow: 0 0 10px rgba(168,201,181,0.8); }
-h1 { max-width: 900px; font-family: Inter, Arial, sans-serif; font-size: clamp(3.5rem, 7.4vw, 7.6rem); font-weight: 700; line-height: 0.98; letter-spacing: -0.065em; color: #f5f7f5; }
-h1 .gradient { background: none; -webkit-text-fill-color: #a8c9b5; color: #a8c9b5; }
-.hero-sub { max-width: 730px; margin-top: 2rem; color: rgba(245,247,245,0.72); font-size: 1.125rem; line-height: 1.6; font-style: normal; }
-.hero-ctas { margin-top: 2.25rem; gap: 0.8rem; }
-.btn-primary { background: #a8c9b5; color: #061a19; box-shadow: 0 0 26px rgba(168,201,181,0.12); transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
-.btn-primary:hover { background: #b9d7c3; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(168,201,181,0.18); }
-.btn-ghost { background: rgba(8,37,34,0.45); border: 1px solid rgba(168,201,181,0.22); color: #d9e5df; transition: transform .25s ease, background .25s ease, border-color .25s ease; }
-.btn-ghost:hover { background: rgba(168,201,181,0.08); border-color: rgba(168,201,181,0.35); transform: translateY(-2px); }
-.hero-network { position: relative; width: min(100%, 1000px); height: 250px; margin-top: 3.5rem; overflow: hidden; isolation: isolate; transform: translate3d(calc(var(--mx, 0) * 8px), calc(var(--my, 0) * 5px), 0); transition: transform .5s ease-out; }
-.network-glow { position: absolute; inset: 15% 10%; background: radial-gradient(ellipse, rgba(168,201,181,0.14), transparent 65%); filter: blur(28px); }
-.network-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.network-line { fill: none; stroke: rgba(168,201,181,0.3); stroke-width: 1.2; filter: drop-shadow(0 0 5px rgba(168,201,181,0.2)); animation: networkFlow 8s linear infinite; }
-.network-line-main { stroke: rgba(168,201,181,0.65); stroke-width: 1.8; }
-.network-line-soft { stroke: rgba(168,201,181,0.18); stroke-width: 1; }
-@keyframes networkFlow { from { stroke-dasharray: .03 .04; stroke-dashoffset: 0; } to { stroke-dashoffset: -1; } }
-.network-node { position: absolute; display: grid; place-items: center; width: 13px; height: 13px; border: 1px solid #b9d7c3; border-radius: 50%; background: #082522; box-shadow: 0 0 0 5px rgba(168,201,181,0.06), 0 0 18px rgba(168,201,181,0.55); z-index: 2; }
-.network-node span { position: absolute; top: 20px; white-space: nowrap; color: rgba(217,229,223,0.66); font-size: 0.68rem; letter-spacing: .08em; text-transform: uppercase; }
-.node-one { left: 17%; top: 66%; } .node-two { left: 34%; top: 27%; } .node-three { left: 52%; top: 56%; } .node-four { left: 70%; top: 20%; } .node-five { left: 85%; top: 52%; }
-.data-particle { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #b9d7c3; box-shadow: 0 0 12px 3px rgba(168,201,181,0.5); z-index: 3; animation: dataTravel 5s linear infinite; }
-.particle-one { top: 58%; left: 0; } .particle-two { top: 44%; left: 30%; animation-delay: 1.6s; } .particle-three { top: 62%; left: 64%; animation-delay: 3.2s; }
-@keyframes dataTravel { 0% { transform: translateX(0) translateY(20px); opacity: 0; } 10%, 85% { opacity: .85; } 100% { transform: translateX(430px) translateY(-30px); opacity: 0; } }
-@media (max-width: 640px) { nav { top: .6rem; left: .6rem; right: .6rem; border-radius: 1.25rem; } #hero { padding: 7.5rem 1rem 2rem; } h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); } .hero-sub { font-size: 1rem; } .hero-network { height: 170px; margin-top: 2.75rem; } .network-node span { font-size: .55rem; } .node-one { left: 12%; } .node-two { left: 30%; } .node-three { left: 49%; } .node-four { left: 68%; } .node-five { left: 86%; } }
-@media (prefers-reduced-motion: reduce) { .network-line, .data-particle, .badge, h1, .hero-sub, .hero-ctas { animation: none !important; } .hero-network { transform: none; } }
 </style>
 </head>
 <body>
@@ -814,27 +780,27 @@ h1 .gradient { background: none; -webkit-text-fill-color: #a8c9b5; color: #a8c9b
 
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="badge"><span class="badge-dot"></span>AI Automation • Chatbots • Voice Agents</div>
-      <h1 id="hero-h1">#1 AI Automation Agency <span class="gradient">in Mumbai</span></h1>
-      <p class="hero-sub" id="hero-sub">Custom AI automation systems that capture leads, handle conversations, automate repetitive work, and help businesses book more appointments.</p>
+      <div class="badge"><span class="badge-dot"></span>Automate · Scale · Dominate</div>
+      <h1 id="hero-h1"></h1>
+      <p class="hero-sub" id="hero-sub"></p>
       <div class="hero-ctas">
         <a href="https://cal.com/jay-ingle-0cyu4f/let-s-optimize-your-business-with-ai-15-min-call" target="_blank" rel="noopener" class="btn-primary">Book a Free Strategy Call →</a>
         <a href="#demo" class="btn-ghost">Watch Demo</a>
       </div>
-      <div class="hero-network" aria-label="AI automation network visual" role="img">
-        <div class="network-glow"></div>
-        <svg class="network-lines" viewBox="0 0 1000 300" aria-hidden="true" preserveAspectRatio="none">
-          <path class="network-line network-line-main" pathLength="1" d="M-20 220 C130 40 220 270 370 135 S620 35 735 150 S900 270 1020 80" />
-          <path class="network-line" pathLength="1" d="M-20 90 C135 260 250 20 420 170 S650 280 790 110 S930 55 1020 205" />
-          <path class="network-line network-line-soft" pathLength="1" d="M-20 165 C150 95 250 105 390 205 S650 205 770 75 S920 105 1020 150" />
-          <path class="network-line network-line-soft" pathLength="1" d="M60 300 C180 195 295 215 430 65 S670 80 820 235 S940 245 1000 185" />
-        </svg>
-        <div class="network-node node-one"><span>Lead</span></div>
-        <div class="network-node node-two"><span>AI Chatbot</span></div>
-        <div class="network-node node-three"><span>Voice Agent</span></div>
-        <div class="network-node node-four"><span>Automation</span></div>
-        <div class="network-node node-five"><span>CRM</span></div>
-        <i class="data-particle particle-one"></i><i class="data-particle particle-two"></i><i class="data-particle particle-three"></i>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Clients Served</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">20h+</div><div class="hero-stat-label">Saved Per Week</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">3×</div><div class="hero-stat-label">Avg. ROI</div></div>
+      </div>
+      <div class="trust-logos">
+        <div class="trust-label">Trusted by businesses across India</div>
+        <div class="logos-row">
+          <span class="logo-pill">Real Estate</span>
+          <span class="logo-pill">Healthcare</span>
+          <span class="logo-pill">E-Commerce</span>
+          <span class="logo-pill">Law Firms</span>
+          <span class="logo-pill">Education</span>
+        </div>
       </div>
     </div>
     <div class="hero-right">
@@ -1873,10 +1839,12 @@ h1 .gradient { background: none; -webkit-text-fill-color: #a8c9b5; color: #a8c9b
 (function() {
   // h1 words with gradient on "20+ Hours"
   const h1El = document.getElementById('hero-h1');
-  h1El.innerHTML = '';
   const h1Words = [
-  { text: '#1 AI Automation Agency ', gradient: false },
-  { text: 'in Mumbai', gradient: true },
+  { text: 'AI ', gradient: true },
+  { text: 'Automation ', gradient: true },
+  { text: 'Agency ', gradient: true },
+  { text: 'in ', gradient: false },
+  { text: 'Mumbai', gradient: false },
   ];
   h1Words.forEach((w, i) => {
     const span = document.createElement('span');
@@ -1887,8 +1855,7 @@ h1 .gradient { background: none; -webkit-text-fill-color: #a8c9b5; color: #a8c9b
 
   // subtitle words
   const subEl = document.getElementById('hero-sub');
-  subEl.innerHTML = '';
-  const subText = 'Custom AI automation systems that capture leads, handle conversations, automate repetitive work, and help businesses book more appointments.';
+  const subText = 'AI Voice Agents, Chatbots, Workflow Automation & Lead Generation Systems Built For Growth.';
   subText.split(/(\s+)/).forEach((word, i) => {
     const span = document.createElement('span');
     span.className = 'te-word';
